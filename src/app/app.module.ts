@@ -1,3 +1,6 @@
+import { ProfileModalPage } from './../modals/profile-modal/profile-modal';
+import { EventModalPage } from './../modals/event-modal/event-modal';
+import { SettingsPage } from './../pages/settings/settings';
 import { FinancePage } from './../pages/finance/finance';
 import { ShoppingListPage } from './../pages/shopping-list/shopping-list';
 import { CleaningPlanPage } from './../pages/cleaning-plan/cleaning-plan';
@@ -13,7 +16,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EventPage } from '../pages/event/event';
 
 import { NgCalendarModule  } from 'ionic2-calendar';
-import { EventModalPage } from '../pages/event-modal/event-modal';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { EventModalPage } from '../pages/event-modal/event-modal';
     ShoppingListPage,
     FinancePage,
     EventPage,
-    EventModalPage
+    EventModalPage,
+    SettingsPage,
+    ProfileModalPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { EventModalPage } from '../pages/event-modal/event-modal';
     ShoppingListPage,
     FinancePage,
     EventPage,
-    EventModalPage
+    EventModalPage,
+    SettingsPage,
+    ProfileModalPage
   ],
   providers: [
     StatusBar,

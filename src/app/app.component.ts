@@ -1,4 +1,5 @@
-import { EventModalPage } from './../pages/event-modal/event-modal';
+import { ProfileModalPage } from './../modals/profile-modal/profile-modal';
+import { SettingsPage } from './../pages/settings/settings';
 import { EventPage } from './../pages/event/event';
 import { FinancePage } from './../pages/finance/finance';
 import { ShoppingListPage } from './../pages/shopping-list/shopping-list';
@@ -9,6 +10,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { EventModalPage } from '../modals/event-modal/event-modal';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = EventPage;
+  rootPage = EventModalPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -34,7 +36,8 @@ export class MyApp {
       { title: 'Dienstplan', component: CleaningPlanPage },
       { title: 'Einkaufsliste', component: ShoppingListPage },
       { title: 'Finanzen', component: FinancePage },
-      { title: 'Ereignisse', component: EventPage }
+      { title: 'Ereignisse', component: EventPage },
+      { title: 'Einstellungen', component: SettingsPage }
     ];
   }
 

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Einstellungen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item (click)="onEditProfile()">
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <ion-label>
+        <h2><strong>Mike</strong></h2>
+        <h3>Mitgleid in: <i>"Die Scheune"</i></h3>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="onEditSharedFlat()">
+      <ion-label>
+        <ion-icon name="settings" style="margin-right: 10px;"></ion-icon> Die Scheune
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="onEditNotifications()">
+      <ion-label>
+        <ion-icon name="notifications" style="margin-right: 10px;"></ion-icon> Benachrichtigungen
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="onHelp()">
+      <ion-label>
+        <ion-icon name="help" style="margin-right: 10px;"></ion-icon> Hilfe
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

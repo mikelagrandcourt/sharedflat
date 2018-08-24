@@ -1,0 +1,21 @@
+page-profile-modal {
+
+  .profile-picture {
+    border-radius: 50%;
+    max-width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    position: relative;
+  }
+
+  .profile-picture img {
+    border-radius: 50%;
+  }
+
+  .profile-picture .fab {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+}

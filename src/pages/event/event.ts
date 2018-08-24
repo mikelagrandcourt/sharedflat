@@ -1,9 +1,9 @@
+import { EventModalPage } from './../../modals/event-modal/event-modal';
 import { CalendarEvent } from './../../data/calendar-event';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { CalendarComponent } from "ionic2-calendar/calendar";
-import { EventModalPage } from '../event-modal/event-modal';
 
 import * as hash from 'object-hash';
 
@@ -41,7 +41,6 @@ export class EventPage {
       if (data) {
 
         let calendarEvent = new CalendarEvent(data.title, data.description, new Date(data.startTime), new Date(data.endTime), data.allDay);
-        console.log('addEvent Hash: ' + hash(calendarEvent));
         this.events.set(hash(calendarEvent), calendarEvent);
         this.eventSource.push(calendarEvent);
         this.myCalendar.loadEvents();
@@ -55,6 +54,23 @@ export class EventPage {
 
   onTimeSelected(ev) {
     this.selectedDay = ev.selectedTime;
+  }
+
+  onEventDelete(event) {
+
+    let selectedEvent = new CalendarEvent(event.title, event.description, new Date(event.startTime), new Date(event.endTime), event.allDay);
+    this.events.delete(hash(selectedEvent));
+    this.eventSource = [];
+
+    let keys = Array.from(this.events.keys());
+
+    // fill eventsource again
+    keys.forEach(key => {
+      this.eventSource.push(this.events.get(key));
+    });
+
+    // update calendar view
+    this.myCalendar.loadEvents();
   }
 
   onEventSelected(event) {
@@ -81,7 +97,6 @@ export class EventPage {
 
         // fill eventsource again
         keys.forEach(key => {
-          // console.log(key);
           this.eventSource.push(this.events.get(key));
         });
 
