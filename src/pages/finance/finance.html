@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>---</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-fab left bottom>
+    <button ion-fab mini><ion-icon name="trash"></ion-icon></button>
+  </ion-fab>
+
+  <div class="distance-dummy"></div>
+
+  <ion-item-group *ngFor="let user of getUsers(sections)" [ngClass]="{'open': sections.get(user)}" class="item-group-custom">
+    <ion-item no-lines class="ion-item-user">
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <ion-label>
+        <h2><strong>{{ user.name }}</strong></h2>
+      </ion-label>
+      <button ion-button item-right outline *ngIf="user.items.length > 0"> <h2>{{ getSum(user.items) }}€</h2></button>
+      <button ion-button item-right clear (click)="openDropdown($event, user)" *ngIf="user.items.length > 0" [ngClass]="{'hide': sections.get(user)}">
+        <h2 class="detail-arrow">
+          <ion-icon name="arrow-forward" color="dark"></ion-icon>
+        </h2>
+      </button>
+      <button ion-button item-right clear (click)="closeDropdown($event, user)" *ngIf="user.items.length > 0" [ngClass]="{'hide': !sections.get(user)}">
+        <h2 class="detail-arrow">
+          <ion-icon name="arrow-down" color="light"></ion-icon>
+        </h2>
+      </button>
+    </ion-item>
+    <ion-item no-lines *ngFor="let item of user.items" class="sublist-item">
+      <ion-label>
+        <h3>{{ item.name }}</h3>
+        <button ion-button outline class="sublist-price-button"> <h2>{{ item.price }}€</h2></button>
+      </ion-label>
+      <ion-checkbox item-right></ion-checkbox>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

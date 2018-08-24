@@ -1,0 +1,47 @@
+page-finance {
+
+  .ion-list-header-cutom {
+    background-color: #f4f4f4;
+  }
+
+  .item-group-custom {
+    border-bottom: 1px solid #dedede;
+  }
+
+  .item-group-custom.open {
+    border-bottom: none;
+  }
+
+  .item-group-custom.open .ion-item-user {
+    background-color: #488aff;
+    color: white;
+  }
+
+  .item-group-custom.open .ion-item-user button {
+    color: white;
+    border-color: white;
+  }
+
+  .sublist-price-button {
+    position: absolute;
+    top: 7px;
+    padding: 0 0.6em;
+    height: 25px;
+    font-size: 1.2rem;
+    right: 43px;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .sublist-item {
+    display: none;
+  }
+
+  .item-group-custom.open .sublist-item {
+    background-color: #f4f4f4;
+    display: block;
+  }
+
+}
