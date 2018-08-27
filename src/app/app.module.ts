@@ -1,3 +1,4 @@
+import { SharedFlatModalPage } from './../modals/shared-flat-modal/shared-flat-modal';
 import { ProfileModalPage } from './../modals/profile-modal/profile-modal';
 import { EventModalPage } from './../modals/event-modal/event-modal';
 import { SettingsPage } from './../pages/settings/settings';
@@ -27,7 +28,8 @@ import { NgCalendarModule  } from 'ionic2-calendar';
     EventPage,
     EventModalPage,
     SettingsPage,
-    ProfileModalPage
+    ProfileModalPage,
+    SharedFlatModalPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { NgCalendarModule  } from 'ionic2-calendar';
     EventPage,
     EventModalPage,
     SettingsPage,
-    ProfileModalPage
+    ProfileModalPage,
+    SharedFlatModalPage
   ],
   providers: [
     StatusBar,

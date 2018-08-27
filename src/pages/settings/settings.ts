@@ -1,3 +1,4 @@
+import { SharedFlatModalPage } from './../../modals/shared-flat-modal/shared-flat-modal';
 import { ProfileModalPage } from './../../modals/profile-modal/profile-modal';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
@@ -31,7 +32,14 @@ export class SettingsPage {
   }
 
   onEditSharedFlat() {
+    let sharedFlatModal = this.modalCtrl.create(SharedFlatModalPage, {sharedFlatTitle: 'Die Scheune'});
+    sharedFlatModal.present();
 
+    sharedFlatModal.onDidDismiss(data => {
+      if(data) {
+        // update data in database!
+      }
+    });
   }
 
   onEditNotifications() {

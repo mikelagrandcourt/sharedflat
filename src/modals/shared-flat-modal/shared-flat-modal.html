@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ flatTitle }} Einstellungen</ion-title>
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()" ioon-only>
+        <ion-icon name="arrow-back" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+
+
+
+
+      <ion-item-divider color="light">Informationen</ion-item-divider>
+      <ion-item>
+        <ion-input type="text" placeholder="Name" value="Die Scheune"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="PLZ" value="71384"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Ort" value="Weinstadt-Großheppach"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Straße" value="Grunbacherstr. 13/1"></ion-input>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item-group class="ion-item-group-members">
+
+      <ion-fab top right edge>
+        <button ion-fab mini class="ion-fab-members"><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+
+      <ion-item-divider color="light">Teilnehmer</ion-item-divider>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/logo.png">
+          </ion-avatar>
+          <ion-label>
+            <h2><strong>Mike Lagrandcourt</strong></h2>
+          </ion-label>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger">
+            <ion-icon name="trash"></ion-icon>
+            Löschen
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/logo.png">
+          </ion-avatar>
+          <ion-label>
+            <h2>Peter Gürkan</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger">
+            <ion-icon name="trash"></ion-icon>
+            Löschen
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-item-group>
+
+  </ion-list>
+</ion-content>

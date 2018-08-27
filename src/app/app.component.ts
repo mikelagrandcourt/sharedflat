@@ -1,3 +1,4 @@
+import { SharedFlatModalPage } from './../modals/shared-flat-modal/shared-flat-modal';
 import { ProfileModalPage } from './../modals/profile-modal/profile-modal';
 import { SettingsPage } from './../pages/settings/settings';
 import { EventPage } from './../pages/event/event';
@@ -20,7 +21,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = EventModalPage;
+  rootPage = SettingsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
